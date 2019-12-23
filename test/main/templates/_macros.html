@@ -1,0 +1,14 @@
+{% macro element_creator(element) %}
+<div class="form-group">
+    {{ element.label(class="form-control-label") }}
+    {{ element(class="form-control") }}
+
+    {% if element.errors %}
+        {% for error in element.errors %}
+            <div class="form-control-sm">{{ error }}</div>
+        {% endfor %}
+    {% endif %}
+    
+</div>
+
+{% endmacro %}

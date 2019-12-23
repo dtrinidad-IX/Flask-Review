@@ -1,0 +1,43 @@
+<-- WTForms -->
+
+	app.config['SECRET_KEY'] = "random"
+	{{ form_name.hidden_tag() }}
+
+<-- SQL ALCHEMY -->
+to create db
+	1. run python in terminal
+	2. import db var
+	3. import models/table */specific class
+	4. db.create_all()
+
+to write
+	1. create object
+	2. db.session(object)
+	3. db.session.commit()
+
+to query
+	Model.query.all()
+	Model.query.first()
+	Model.query.filter_by(colum_name = "value to search").first() / .all()
+
+<-- BCRYPT -->
+
+pw_hash = bcrypt.generate_password_hash('hunter2').decode("utf-8")
+bcrypt.check_password_hash(pw_hash, 'hunter2') # returns True
+
+
+<-- JINJA MACRO -->
+define a macro
+	{% macro name(parameter_to_expect) %}
+		do stuff  
+	{% endmacro %}
+
+import a macro
+	{% from "filename" import macro_name as desired_macro_name %}
+
+call a macro
+	{{ desired_macro_name(parameters) }}
+
+
+
+
